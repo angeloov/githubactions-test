@@ -18,6 +18,6 @@ jobs:
           to: marioccide@gmail.com
           from: Angelo Voicu # <user@example.com>
           # Optional content type (defaults to text/plain):
-          content_type: text/html
+          content_type: text/plain
           # Optional attachments:
           attachments: README.md
