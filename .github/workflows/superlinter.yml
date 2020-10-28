@@ -1,18 +1,8 @@
-name: Super-Linter
-
-# Run this workflow every time a new commit pushed to your repository
-on: push
-
+name: send-email-on-push
+on: [push]
 jobs:
-  # Set the job key. The key is displayed as the job name
-  # when a job name is not provided
-  echoing:
-    # Name the Job
-    name: Echoing
-    # Set the type of machine to run on
+  send-email:
     runs-on: ubuntu-latest
-
     steps:
-      # Checks out a copy of your repository on the ubuntu-latest machine
-      - name: Echoing out
-        uses: echo "ciao!"
+      - run: echo "Ciao!"
+      - run: echo "Finito"
