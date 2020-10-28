@@ -14,10 +14,10 @@ jobs:
           # Literal body:
           body: Build job of ${{github.repository}} completed successfully!
           # Read file contents as body:
-          # body: file://README.md
+          body: file://README.md
           to: marioccide@gmail.com
           from: Angelo Voicu # <user@example.com>
           # Optional content type (defaults to text/plain):
           content_type: text/html
           # Optional attachments:
-          attachments: index.js
+          attachments: README.md
