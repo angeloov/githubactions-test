@@ -7,5 +7,12 @@ jobs:
   # Set the job key. The key is displayed as the job name
   # when a job name is not provided
   echoing:
-    name: 'Echoing here'
-    uses: echo "ciao!"
+    # Name the Job
+    name: Echoing
+    # Set the type of machine to run on
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks out a copy of your repository on the ubuntu-latest machine
+      - name: Echoing out
+        uses: echo "ciao!"
