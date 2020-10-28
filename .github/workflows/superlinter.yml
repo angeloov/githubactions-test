@@ -15,7 +15,7 @@ jobs:
           body: Build job of ${{github.repository}} completed successfully!
           # Read file contents as body:
           # body: file://index.js
-          to: marioccide@gmail.com
+          to: marioccide@gmail.com, everlastmailplay@gmail.com
           from: Angelo Voicu # <user@example.com>
           # Optional content type (defaults to text/plain):
           content_type: text/plain
