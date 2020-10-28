@@ -2,23 +2,22 @@ name: send-email-on-push
 on: [push]
 jobs:
   send-email:
-    name: "Send an email with the contents of the commit"
     runs-on: ubuntu-latest
     steps: 
-      uses: dawidd6/action-send-mail@v2
-      with:
-        server_address: smtp.gmail.com
-        server_port: 465
-        username: ${{secrets.MAIL_USERNAME}}
-        password: ${{secrets.MAIL_PASSWORD}}
-        subject: Github Actions mail sender
-        # Literal body:
-        body: Build job of ${{github.repository}} completed successfully!
-        # Read file contents as body:
-        # body: file://README.md
-        to: marioccide@gmail.com
-        from: Angelo Voicu # <user@example.com>
-        # Optional content type (defaults to text/plain):
-        content_type: text/html
-        # Optional attachments:
-        attachments: ./index.js
+      - uses: dawidd6/action-send-mail@v2
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{secrets.MAIL_USERNAME}}
+          password: ${{secrets.MAIL_PASSWORD}}
+          subject: Github Actions mail sender
+          # Literal body:
+          body: Build job of ${{github.repository}} completed successfully!
+          # Read file contents as body:
+          # body: file://README.md
+          to: marioccide@gmail.com
+          from: Angelo Voicu # <user@example.com>
+          # Optional content type (defaults to text/plain):
+          content_type: text/html
+          # Optional attachments:
+          attachments: ./index.js
