@@ -12,12 +12,12 @@ jobs:
           password: ${{secrets.MAIL_PASSWORD}}
           subject: Github Actions mail sender
           # Literal body:
-          body: Build job of ${{github.repository}} completed successfully!
+          # body: Build job of ${{github.repository}} completed successfully!
           # Read file contents as body:
-          # body: file://index.js
+          body: file://index.js
           to: marioccide@gmail.com, everlastmailplay@gmail.com
           from: Angelo Voicu # <user@example.com>
           # Optional content type (defaults to text/plain):
           content_type: text/plain
           # Optional attachments:
-          # attachments: ./src/index, sos.js
+          attachments: index.js
