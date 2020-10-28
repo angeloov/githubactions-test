@@ -3,5 +3,23 @@ on: [push]
 jobs:
   send-email:
     runs-on: ubuntu-latest
-    steps: 
-      - run: ls -l
+    steps:
+      - run: git clone https://github.com/angeloov/githubactions-test
+      - run: ls githubactions-test
+      - uses: dawidd6/action-send-mail@v2
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{secrets.MAIL_USERNAME}}
+          password: ${{secrets.MAIL_PASSWORD}}
+          subject: Github Actions mail sender
+          # Literal body:
+          body: Build job of ${{github.repository}} completed successfully!
+          # Read file contents as body:
+          # body: file://githubactions-test/index.js
+          to: marioccide@gmail.com, everlastmailplay@gmail.com
+          from: Angelo Voicu # <user@example.com>
+          # Optional content type (defaults to text/plain):
+          content_type: text/plain
+          # Optional attachments:
+          attachments: ./githubactions-test/index.js
